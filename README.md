@@ -1,4 +1,4 @@
-# Twitch-Streamer: live stream Twitch.tv data using Spark Streaming
+# Twitch-Streamer: live stream Twitch.tv data with Spark Streaming
 
 [![][license img]][license]
 
