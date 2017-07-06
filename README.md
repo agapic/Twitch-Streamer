@@ -1,4 +1,4 @@
-# Twitch-Streamer: use Spark Streaming to to stream messages from Twitch.tv's IRC chat
+# Twitch-Streamer: live stream Twitch.tv data using Spark Streaming
 
 [![][license img]][license]
 
