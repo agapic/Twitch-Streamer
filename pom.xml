@@ -23,6 +23,11 @@
     <artifactId>spark-streaming-twitch_2.11</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <name>Spark Streaming Twitch</name>
+    <url>https://github.com/agapic/twitch-streamer</url>
+    <description>An application that makes Spark Streaming with Twitch easy and accessible.</description>
+
     <properties>
         <sbt.project.name>streaming-com.agapic.twitch</sbt.project.name>
         <spark.version>2.1.1</spark.version>
@@ -32,6 +37,7 @@
         <scala.version>2.11.8</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
     </properties>
+
     <licenses>
         <license>
             <name>Apache 2.0 License</name>
@@ -39,9 +45,32 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <name>Spark Streaming Twitch</name>
-    <url>http://agapic.xyz/</url>
 
+    <developers>
+        <developer>
+            <name>Andrew Gapic</name>
+            <email>andrewjdg@gmail.com</email>
+            <organization>Developer</organization>
+            <organizationUrl>http://www.agapic.xyz</organizationUrl>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/agapic/twitch-streamer.git</connection>
+        <developerConnection>scm:git:ssh://github.com/agapic/twitch-streamer.git</developerConnection>
+        <url>https://github.com/agapic/twitch-streamer/tree/master</url>
+    </scm>
     <dependencies>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -122,11 +151,51 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
