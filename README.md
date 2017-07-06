@@ -108,5 +108,5 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[license]:LICENSE-2.0.txt
+[license]:LICENSE
 [license img]:https://img.shields.io/badge/License-Apache%202-blue.svg
