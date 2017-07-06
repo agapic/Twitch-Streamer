@@ -1,4 +1,6 @@
-# twitch-streamer
+# Twitch-Streamer: use Spark Streaming to to stream messages from Twitch.tv's IRC chat
+
+[![][license img]][license]
 `TwitchStreamBuilder` uses Twitch's [Chat and IRC API](https://dev.twitch.tv/docs/v5/guides/irc/) to stream in messages from specified
 channels. `twitch-streamer` wraps Spark Streaming over the IRC client to allow users to take advantage of "scalable, high-throughput, 
 fault-tolerant stream processing of live data streams". (See here: https://spark.apache.org/docs/latest/streaming-programming-guide.html#overview)
