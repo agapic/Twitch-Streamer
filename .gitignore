@@ -1,0 +1,10 @@
+
+# Add IntelliJ and maven output-related files
+.idea/*
+streaming-twitch.iml
+checkpoint/
+target/
+
+# Authentication file
+real_twitch_auth.txt
+
