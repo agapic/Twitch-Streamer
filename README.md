@@ -47,16 +47,16 @@ Twitch-Streamer introduces an abstraction called a `Message`. It transforms a li
 
 ### Scala API
 ```
-import com.agapic.spark.streaming.TwitchStreamBuilder
-import com.agapic.stream.Message
+import com.andrewgapic.spark.streaming.TwitchStreamBuilder
+import com.andrewgapic.stream.Message
 val gamesSet: Set[String] = Set("League+of+Legends")
 val stream: ReceiverInputDStream[Message] = new TwitchStreamBuilder().setGames(gamesSet).build(ssc)
 ```
 
 ### Java API
 ```
-import com.agapic.spark.streaming.TwitchStreamBuilder;
-import com.agapic.stream.Message;
+import com.andrewgapic.spark.streaming.TwitchStreamBuilder;
+import com.andrewgapic.stream.Message;
 Set<String> gamesSet = new HashSet<>();
 gamesSet.add("League+of+Legends");
 JavaReceiverInputDStream<Message> stream = new TwitchStreamBuilder().setGames(gamesSet).build(jssc);
@@ -65,8 +65,8 @@ JavaReceiverInputDStream<Message> stream = new TwitchStreamBuilder().setGames(ga
 ### Full usage (Scala)
 **Note**: spaces in game names must be replaced by a `+` character. This will be added in future versions.
 ```
-import com.agapic.spark.streaming.TwitchStreamBuilder
-import com.agapic.stream.Message
+import com.andrewgapic.spark.streaming.TwitchStreamBuilder
+import com.andrewgapic.stream.Message
 val sparkConf = new SparkConf().setAppName("TwitchTest")
 val ssc = new StreamingContext(sparkConf, Seconds(2))
 val gamesSet: Set[String] = Set("League+of+Legends")
