@@ -8,3 +8,6 @@ target/
 # Authentication file
 real_twitch_auth.txt
 
+# Garbage files
+.DS_Store
+

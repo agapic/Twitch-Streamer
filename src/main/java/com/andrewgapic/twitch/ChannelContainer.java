@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.agapic.twitch;
+package com.andrewgapic.twitch;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

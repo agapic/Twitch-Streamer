@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package com.agapic.spark.streaming
+package com.andrewgapic.spark.streaming
 
 import java.io.IOException
 
 import akka.actor.ActorSystem
-import com.agapic.stream.{Message, TwitchStream}
+import com.andrewgapic.stream.{Message, TwitchStream}
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming._
 import org.apache.spark.streaming.dstream._

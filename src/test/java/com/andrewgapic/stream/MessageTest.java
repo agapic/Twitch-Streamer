@@ -15,4 +15,27 @@
  * limitations under the License.
  */
 
-package com.agapic.common;
+package com.andrewgapic.stream;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MessageTest {
+
+    @Test
+    public void testValidMessageConstruction() {
+        String line = ":andrew!andrew@author.tmi.com.agapic.twitch.tv PRIVMSG #mrbean :hey man";
+        Message msg = new Message().createMessage(line);
+        Assert.assertNotNull(msg);
+        Assert.assertEquals(msg.getAuthor(), "andrew");
+        Assert.assertEquals(msg.getChannel(), "mrbean");
+        Assert.assertEquals(msg.getContent(), "hey man");
+    }
+
+    @Test
+    public void testInvalidMessageConstruction() {
+        String line = "rubbish";
+        Message msg = new Message().createMessage(line);
+        Assert.assertNull(msg);
+    }
+}

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.agapic.stream;
+package com.andrewgapic.stream;
 
 import java.io.Serializable;
 import java.util.regex.Matcher;

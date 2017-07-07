@@ -15,8 +15,8 @@
  * limitations under the License.
  */
 
-import com.agapic.spark.streaming.TwitchStreamBuilder
-import com.agapic.stream.Message
+import com.andrewgapic.spark.streaming.TwitchStreamBuilder
+import com.andrewgapic.stream.Message
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.ReceiverInputDStream
 import org.apache.spark.streaming.{Seconds, StreamingContext}

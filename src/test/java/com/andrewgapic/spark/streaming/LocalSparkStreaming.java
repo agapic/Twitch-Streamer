@@ -15,7 +15,28 @@
  * limitations under the License.
  */
 
-/**
- * Anything related to fetching data from the Twitch web API
- */
-package com.agapic.twitch;
+package com.andrewgapic.spark.streaming;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.streaming.Duration;
+import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import org.junit.After;
+import org.junit.Before;
+
+public abstract class LocalSparkStreaming {
+
+    transient JavaStreamingContext jssc;
+
+    @Before
+    public void setUp() {
+        SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("TestingSparkStreaming");
+        jssc = new JavaStreamingContext(conf, new Duration(1000));
+        jssc.checkpoint("checkpoint");
+    }
+
+    @After
+    public void tearDown() {
+        jssc.stop();
+        jssc = null;
+    }
+}

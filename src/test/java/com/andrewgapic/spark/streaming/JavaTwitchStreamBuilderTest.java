@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.agapic.spark.streaming;
+package com.andrewgapic.spark.streaming;
 
-import com.agapic.stream.Message;
+import com.andrewgapic.stream.Message;
 import org.apache.spark.storage.StorageLevel;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.junit.Assert;

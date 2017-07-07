@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.agapic.stream;
+package com.andrewgapic.stream;
 
-import com.agapic.twitch.TwitchApi;
+import com.andrewgapic.twitch.TwitchApi;
 
 import javax.naming.AuthenticationException;
 import java.io.IOException;

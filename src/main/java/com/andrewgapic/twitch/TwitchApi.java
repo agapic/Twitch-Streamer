@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.agapic.twitch;
+package com.andrewgapic.twitch;
 
-import com.agapic.common.Constants;
+import com.andrewgapic.common.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Set;
 
-import static com.agapic.common.Constants.BAD_CLIENT_ID;
-import static com.agapic.common.Constants.STREAM_ENDPOINT;
+import static com.andrewgapic.common.Constants.BAD_CLIENT_ID;
+import static com.andrewgapic.common.Constants.STREAM_ENDPOINT;
 
 /**
  * API Wrapper that handles requests to Twitch's API.

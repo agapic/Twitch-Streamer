@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.agapic.spark.streaming
+package com.andrewgapic.spark.streaming
 
-import com.agapic.stream.Message
+import com.andrewgapic.stream.Message
 import org.apache.spark.SparkFunSuite
 import org.apache.spark.streaming.dstream.ReceiverInputDStream
 import org.apache.spark.streaming.{Duration, Seconds, StreamingContext}

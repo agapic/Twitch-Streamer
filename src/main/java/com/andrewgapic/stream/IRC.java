@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.agapic.stream;
+package com.andrewgapic.stream;
 
-import com.agapic.common.Constants;
+import com.andrewgapic.common.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

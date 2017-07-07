@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.agapic.common;
+package com.andrewgapic.common;
 
 /** A utility class to hold various constants
  * used by the Twitch Spark Streaming library.
