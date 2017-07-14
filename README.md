@@ -3,7 +3,7 @@
 [![][license img]][license]
 
 `Twitch-Streamer` uses Twitch's [Chat and IRC API](https://dev.twitch.tv/docs/v5/guides/irc/) to stream in messages from specified
-Twitch.tv channels. It is a light-weight wrapper over Spark Streaming and Twitch's Chat IRC data feed. The goal of this project is to fully utilize the strengths of Spark Streaming to allow others to perform analysis of Twitch's live stream chatrooms.
+Twitch.tv channels. It is a light-weight wrapper over Spark Streaming and Twitch's Chat IRC data feed. The goal of this project is to fully utilize the strengths of Spark Streaming to allow others to perform analyses of Twitch's live stream chatrooms.
 
 ## Full Documentation
 ### Scaladocs
