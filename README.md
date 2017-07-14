@@ -46,7 +46,7 @@ $ mvn clean install
 calls could potentially also have their own thread. 
 
 ## Usage
-Twitch-Streamer can be used with either Scala or Java, and was built with this notion in mind. Generally, Scala is a better fit since Spark was built in Scala, but as always, use your favourite language.
+Twitch-Streamer can be used with either Scala or Java, and was built with this notion in mind. Generally, Scala is a better fit since Spark was built in Scala; but, as always, use your favourite language. `Twitch-Streamer` uses the Builder pattern to construct a new Receiver object; please refer to the scaladocs for a complete listing of mutator methods.
 
 ### twitch_auth.txt
 1. You can obtain the `twitch_client_id` by registering for your application here: https://www.twitch.tv/settings/connections. Alternatively, you can follow the instructions here: https://blog.twitch.tv/client-id-required-for-kraken-api-calls-afbb8e95f843.
