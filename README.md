@@ -6,14 +6,28 @@
 Twitch.tv channels. `Twitch-Streamer` is a light-weight wrapper over Spark Streaming and Twitch's Chat IRC data feed. The goal of this project is to utilize the strengths of Spark Streaming for the analysis of Twitch's live stream chatrooms.
 
 ## Full Documentation
-TODO: put javadoc here
+### Scaladocs
+Clients (yourself!) will interact directly using the scala classes -- these are important! [Find them here](http://andrewgapic.com/spark-streaming-twitch/scaladocs/#com.andrewgapic.package)
+### Javadocs
+The inner working of this project were written in Java. [Find them here](http://andrewgapic.com/spark-streaming-twitch/javadocs/)
 
 ## Communication
 - Twitter: [@AndrewGapic](http://twitter.com/andrewgapic)
 - [GitHub Issues](https://github.com/agapic/twitch-streamer/issues)
 
 ## Getting Started
-TODO: place Maven and SBT dependency here once settled on central repo.
+### Using Maven
+```
+<dependency>
+    <groupId>com.andrewgapic</groupId>
+    <artifactId>spark-streaming-twitch</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+### Using SBT 
+```
+libraryDependencies += "com.andrewgapic" %% "spark-streaming-twitch" % "1.0.0"
+```
 
 ## Developing
 ### Built With
@@ -62,8 +76,8 @@ gamesSet.add("League+of+Legends");
 JavaReceiverInputDStream<Message> stream = new TwitchStreamBuilder().setGames(gamesSet).build(jssc);
 ```
 
-### Full usage (Scala)
-**Note**: spaces in game names must be replaced by a `+` character. This will be added in future versions.
+### More advanced usage (Scala)
+**Note**: spaces in game names must be replaced by a `+` character. This will be done automatically in future versions.
 ```
 import com.andrewgapic.spark.streaming.TwitchStreamBuilder
 import com.andrewgapic.stream.Message
