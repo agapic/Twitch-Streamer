@@ -28,6 +28,9 @@ import org.apache.spark.streaming.dstream.ReceiverInputDStream
 import scala.collection.JavaConverters._
 import scala.concurrent.duration._
 
+/**
+  * Trait for building a ReceiverInputDStream object
+  */
 trait Builder {
 
   def setGames(games: util.Set[String]): Builder
@@ -63,7 +66,7 @@ class TwitchStreamBuilder() extends Builder {
   private var storageLevel : StorageLevel = StorageLevel.MEMORY_AND_DISK_SER_2
   private var schedulingInterval : FiniteDuration = 600.seconds
 
-  /** Use java.util.Set
+  /** Uses java.util.Set
     *
     * @param games joins the top 25 channels for each specified game
     * @return
@@ -74,8 +77,8 @@ class TwitchStreamBuilder() extends Builder {
   }
 
   /**
-    * See above. Uses a scala immutable set
-    * @param games
+    * Scala implementation for adding games.
+    * @param games joins the top 25 channels for each specified game.
     * @return
     */
   override def setGames(games: Set[String]): TwitchStreamBuilder = {
@@ -94,8 +97,8 @@ class TwitchStreamBuilder() extends Builder {
   }
 
   /**
-    * See above. Uses a scala immutable set
-    * @param channels
+    * Scala implementation for adding channels.
+    * @param channels joins the specified channels.
     * @return
     */
   override def setChannels(channels: Set[String]): TwitchStreamBuilder = {
@@ -104,7 +107,7 @@ class TwitchStreamBuilder() extends Builder {
   }
 
   /**
-    *
+    * Set the language that the channels should be in.
     * @param language filter messages by language of the channel. Default = "en".
     * @return
     */
@@ -114,8 +117,8 @@ class TwitchStreamBuilder() extends Builder {
   }
 
   /**
-    *
-    * @param storageLevel the storage level. See Spark documentation for more information.
+    * See https://spark.apache.org/docs/2.1.1/api/scala/index.html#org.apache.spark.storage.StorageLevel
+    * @param storageLevel how data is stored; i.e. memory, disk, etc.
     * @return
     */
   override def setStorageLevel(storageLevel: StorageLevel): TwitchStreamBuilder = {
@@ -156,14 +159,20 @@ class TwitchStreamBuilder() extends Builder {
   }
 
   /**
-    * Builds a discretized spark stream for Twitch
+    * Invokes the build method associated to Scala's Spark Streaming context. It is used as an entry point for Java
+    * application
+    * @param jssc
     * @return
     */
-
   override def build(jssc: JavaStreamingContext): JavaReceiverInputDStream[Message] = {
     build(jssc.ssc)
   }
 
+  /**
+    * Builds a new DStream that streams in Twitch messages from the IRC client.
+    * @param ssc
+    * @return
+    */
   override def build(ssc: StreamingContext): ReceiverInputDStream[Message] = {
     checkNotNull(ssc, "streaming context")
     checkNotNull(this.games, "games")

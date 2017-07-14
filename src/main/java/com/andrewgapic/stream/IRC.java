@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * A small class that handles actions that interact directly with the Twitch IRC server.
  */
-class IRC {
+public final class IRC {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(IRC.class);
     /**

@@ -16,6 +16,6 @@
  */
 
 /**
- * Anything related to fetching data from the Twitch web API
+ * Contains logic related to Twitch's web API.
  */
 package com.andrewgapic.twitch;

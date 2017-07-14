@@ -22,8 +22,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Abstracts a message from IRC into a Message object, which distills a message
- * into the user that wrote it, the channel it was written on, and the contained content.
+ * Abstracts a message from IRC into a Message object, which constructs a message into an [author, channel, content]
+ * object.
  */
 public final class Message implements Comparable<Message>, Serializable {
     /**
@@ -32,22 +32,22 @@ public final class Message implements Comparable<Message>, Serializable {
     private static final transient Pattern PATTERN = twitchChatMessagePattern();
 
     /**
-     * The author of the message. I.e., the user that wrote the message.
+     * The author of the message.
      */
     private String author = null;
 
     /**
-     * The channel that the message was sent to.
+     * Channel that contains the message.
      */
     private String channel = null;
 
     /**
-     * The actual content of the message.
+     * Content of the message.
      */
     private String content = null;
 
     /**
-     * Dottie's True Blue Cafe
+     * Pattern matching for incoming lines of text.
      * Sample line representing a message:
      * :author!author@author.tmi.twitch.tv PRIVMSG #channel :message
      *
@@ -66,7 +66,7 @@ public final class Message implements Comparable<Message>, Serializable {
      * @param line is a string received from IRC
      * @return
      */
-    Message createMessage(final String line) {
+    public Message createMessage(final String line) {
         Matcher matcher = PATTERN.matcher(line);
         if (matcher.matches()) {
             this.channel = matcher.group(5);
@@ -89,12 +89,6 @@ public final class Message implements Comparable<Message>, Serializable {
         return content;
     }
 
-    /**
-     * Sorts messages by channel name as of now.
-     *
-     * @param that
-     * @return
-     */
     public int compareTo(final Message that) {
         if (that == null || that.getChannel() == null) {
             return -1;
@@ -110,8 +104,7 @@ public final class Message implements Comparable<Message>, Serializable {
 
         Message message = (Message) o;
 
-        if (!author.equals(message.author)) return false;
-        return channel.equals(message.channel) && content.equals(message.content);
+        return author.equals(message.author) && channel.equals(message.channel) && content.equals(message.content);
     }
 
     @Override

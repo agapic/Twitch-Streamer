@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.*;
 
 /**
- * A POJO that holds converted JSON data from Twitch API responses.
+ * Holds the state of a Twitch web API response.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)

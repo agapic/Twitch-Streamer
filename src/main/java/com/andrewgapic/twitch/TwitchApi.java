@@ -56,16 +56,19 @@ public class TwitchApi {
 
     /**
      * Filter streams/channels by game and by language.
-     * Passes the JSON response to a Java POJO for easier use.
+     * Passes the JSON response to a Java object for easier use.
      *
      * @param game     the game to get the channels for
      * @param language filter all channels by language
      * @return a list of the channels currently streaming for a given game + language
-     * @throws IOException TODO: maybe handle the case for "all" languages
-     *                     TODO: make this run in its own thread. See java.util.concurrency
-     *                     TODO: organize the API better. This function is weak.
+     * @throws IOException
      */
     public Set<String> getStreamsByGame(final String game, final String language) throws IOException {
+        /*
+        TODO: maybe handle the case for "all" languages
+        TODO: make this run in its own thread. See java.util.concurrency
+        TODO: organize the API better. This function is weak.
+         */
         StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(STREAM_ENDPOINT)
                 .append(QUESTION_MARK)

@@ -26,9 +26,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Wrapper class that wraps the IRC server and the Twitch API.
- * All spark streaming related classes interact with the API and IRC server through this.
- * Stores a "state" of the current channels that are joined.
+ * Wraps the IRC server and the Twitch API.
+ * All Spark Streaming related classes interact with the API and IRC server through this.
+ * Stores a state of current joined channels.
  */
 public class TwitchStream {
 

@@ -1,7 +1,7 @@
 
 # Add IntelliJ and maven output-related files
 .idea/*
-streaming-twitch.iml
+*.iml
 checkpoint/
 target/
 

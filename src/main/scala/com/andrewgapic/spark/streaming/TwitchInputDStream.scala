@@ -35,11 +35,10 @@ import scala.language.postfixOps
 /** A stream of Twitch messages.
   *
   *
-  * @constructor Creates a new TwitchStream object and streams in Message objects.
+  * @constructor Starts a receiver for Twitch stream messages.
   *
-  * If no games or channels are provided, the program terminates as no messages will be streamed.
-  * It's recommended to have a longer scheduling interval as a short one will slow things down due to making an API
-  * request to Twitch. Also, the rate of large channels being online and subsequently offline is relatively slow.
+  * If games or channels are not provided, no messages are streamed and the receiver is gracefully terminated.
+  * Short scheduling intervals (<5 min) are not recommended due to the frequency of API calls. No rate limiting is done.
   *
   * TODO: make all async operations have their own thread for performance.
   */
@@ -57,6 +56,9 @@ class TwitchInputDStream(
   }
 }
 
+/**
+  * A Twitch receiver that implements Spark's abstract Receiver class.
+  */
 class TwitchReceiver(
     games: Set[String],
     channels: Set[String],

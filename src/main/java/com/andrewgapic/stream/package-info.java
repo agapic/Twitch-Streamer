@@ -15,4 +15,7 @@
  * limitations under the License.
  */
 
+/**
+ * Contains logic related to IRC. Includes transforming incoming lines of texts, and maintaining channel state.
+ */
 package com.andrewgapic.stream;

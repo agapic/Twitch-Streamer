@@ -15,4 +15,7 @@
  * limitations under the License.
  */
 
+/**
+ * Store utils/constants used throughout the project.
+ */
 package com.andrewgapic.common;
