@@ -7,9 +7,13 @@ Twitch.tv channels. `Twitch-Streamer` is a light-weight wrapper over Spark Strea
 
 ## Full Documentation
 ### Scaladocs
-Clients (yourself!) will interact directly using the scala classes -- these are important! [Find them here](http://andrewgapic.com/spark-streaming-twitch/scaladocs/#com.andrewgapic.package)
+Clients (yourself!) will interact directly using the scala classes -- these are important!
+
+[Find them here](http://andrewgapic.com/spark-streaming-twitch/scaladocs/#com.andrewgapic.package)
 ### Javadocs
-The inner working of this project were written in Java. [Find them here](http://andrewgapic.com/spark-streaming-twitch/javadocs/)
+The inner working of this project were written in Java.
+
+[Find them here](http://andrewgapic.com/spark-streaming-twitch/javadocs/)
 
 ## Communication
 - Twitter: [@AndrewGapic](http://twitter.com/andrewgapic)
