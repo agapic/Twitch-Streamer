@@ -2,7 +2,7 @@
 
 [![][license img]][license]
 
-`spark-streaming-twitch` uses Twitch's [Chat and IRC API](https://dev.twitch.tv/docs/v5/guides/irc/) to stream in messages from specified
+`Twitch-Streamer` uses Twitch's [Chat and IRC API](https://dev.twitch.tv/docs/v5/guides/irc/) to stream in messages from specified
 Twitch.tv channels. It is a light-weight wrapper over Spark Streaming and Twitch's Chat IRC data feed. The goal of this project is to fully utilize the strengths of Spark Streaming to allow others to perform analyses of Twitch's live stream chatrooms.
 
 ## Full Documentation
@@ -46,7 +46,7 @@ $ mvn clean install
 calls could potentially also have their own thread. 
 
 ## Usage
-`spark-streaming-twitch` can be used with either Scala or Java, and was built with this notion in mind. Generally, Scala is a better fit since Spark was built in Scala; but, as always, use your favourite language. `spark-streaming-twitch` uses the Builder pattern to construct a new Receiver object; please refer to the scaladocs for a complete listing of mutator methods.
+`Twitch-Streamer` can be used with either Scala or Java, and was built with this notion in mind. Generally, Scala is a better fit since Spark was built in Scala; but, as always, use your favourite language. `Twitch-Streamer` uses the Builder pattern to construct a new Receiver object; please refer to the scaladocs for a complete listing of mutator methods.
 
 ### twitch_auth.txt
 1. You can obtain the `twitch_client_id` by registering for your application here: https://www.twitch.tv/settings/connections. Alternatively, you can follow the instructions here: https://blog.twitch.tv/client-id-required-for-kraken-api-calls-afbb8e95f843.
@@ -60,7 +60,7 @@ twitch_password <go here: http://twitchapps.com/tmi/> It's an oauth: password, n
 ```
 
 ### Messages
-`spark-streaming-twitch` introduces an abstraction called a `Message`. It transforms a line of text from Twitch's IRC chat into a 
+`Twitch-Streamer` introduces an abstraction called a `Message`. It transforms a line of text from Twitch's IRC chat into a 
 `Message`, which allows clients to get the author of the message, the channel name, and the actual message content.
 
 ### Scala API
