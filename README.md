@@ -11,7 +11,7 @@ Clients (yourself!) will interact directly using the scala classes -- these are 
 
 [Find them here](http://andrewgapic.com/spark-streaming-twitch/scaladocs/#com.andrewgapic.package)
 ### Javadocs
-The inner working of this project were written in Java.
+The nitty gritty internals of the project were written in Java.
 
 [Find them here](http://andrewgapic.com/spark-streaming-twitch/javadocs/)
 
